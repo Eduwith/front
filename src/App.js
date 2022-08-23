@@ -11,6 +11,9 @@ import Mentoring from './routes/Mentoring';
 import Navbar from './components/home/Navbar';
 import MenteeRecruit from './components/mentoring/MenteeRecruit';
 import MentorRecruit from './components/mentoring/MentorRecruit';
+import TestMain from './components/test/TestMain';
+import TestQna from './components/test/TestQna';
+import TestResult from './components/test/TestResult';
 
 function App() {
 
@@ -35,6 +38,9 @@ function App() {
             <Route path="/mentorRecruit" element={<MentorRecruit />}></Route>
             <Route path="/menteeRecruit" element={<MenteeRecruit />}></Route>
             
+            <Route path="/test" element={<TestMain />}></Route>
+            <Route path="/testqna" element={<TestQna />}></Route>
+            <Route path="/result" element={<TestResult />}></Route>
 
 
             
