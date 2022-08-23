@@ -15,6 +15,10 @@ import TestMain from './components/test/TestMain';
 import TestQna from './components/test/TestQna';
 import TestResult from './components/test/TestResult';
 
+import Volunteer from './routes/Volunteers';
+import VolunteerDetail from './components/volunteer/VolunteerDetail';
+
+
 function App() {
 
   return (
@@ -42,10 +46,15 @@ function App() {
             <Route path="/testqna" element={<TestQna />}></Route>
             <Route path="/result" element={<TestResult />}></Route>
 
+            <Route path="/volunteers" element={<Volunteer/>}></Route>
+            <Route path="/volunteers/no=:idex" element={<VolunteerDetail/>}></Route>
+
 
             
           </Routes>
         </Router>
+
+
     </div>
   );
 }
