@@ -1,10 +1,10 @@
 import React from "react";
-//import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import styles from "./Volunteer.module.css";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-//import axios from "axios";
+import axios from "axios";
 import vlists from "../dummyVData.js";
 //import Paging from "../components/volunteer/Paging";
 import vimg from "../images/vimage.png";
@@ -17,31 +17,11 @@ function Volunteer() {
             {if(props.recruit == "N") { return "#5D6466"}
         } }
     `;
-    // const [page, setPage] = useState(1); // 현재 페이지
-    // const [currentPosts, setCurrentPosts] = useState([]); // 보여줄 포스트
-    // const [postPerPage] = useState(7); //페이지당 포스트 개수
-    // const indexOfLastPost = page * postPerPage; //해당 페이지의 첫번째 데이터 인덱스
-    // const indexOfFirstPost = indexOfLastPost - postPerPage; //해당 페이지의 마지막 데이터 인덱스
-    // const handlePageChange = (page) => { 
-    //     setPage(page); 
-    //     console.log(page); 
-    // }
-
-    // useEffect(() => {
-    //     setCurrentPosts(vlist.slice(indexOfFirstPost, indexOfLastPost));
-    // }, [indexOfFirstPost, indexOfLastPost, page]);
-
-    // const onClickTwo = () =>{
-    //     setPage(2);
-    // }
-    // const onClickone= () =>{
-    //     setPage(1);
-    // }
 
     const [vlist, setVlist] = useState(vlists);
     
-    // const baseUrl =  "http://localhost:8080";
-    // const [vlist, setVlist] = useState([]);
+    const baseUrl =  "http://localhost:8080";
+    //const [vlist, setVlist] = useState([]);
     // const getVlist = async () => {
     //     try {
     //         const response = await axios.get(baseUrl+ "/api/volunteers",
@@ -75,11 +55,11 @@ function Volunteer() {
     
                     {vlist.map((item, idex) =>
                     (
+                                <Link to={`/volunteers/no=${item.v_no}`} state={{ data: item }} style={{ textDecoration: "none", color: "#333333" }}> 
                         <div className={styles.listbox} key={idex}>
                             <div className={styles.boxleft}>
-                                <Link to={`/volunteers/no=${item.v_no}`} state={{ data: item }}>
                                     <Vbutton recruit={item.recruitYN} className={styles.recruitbtn}>모집중</Vbutton>
-                                </Link>
+                                
                                 <div><img src={peopleicon}/> {item.current_people}/{item.total_people}</div>
                             </div>
                             <div className={styles.boxdetail}>
@@ -89,6 +69,7 @@ function Volunteer() {
                             </div>
                             {console.log(idex)}
                         </div>
+                        </Link>
                     ))}
                 </div>
             </div>

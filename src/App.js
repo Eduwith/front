@@ -15,8 +15,11 @@ import TestMain from './components/test/TestMain';
 import TestQna from './components/test/TestQna';
 import TestResult from './components/test/TestResult';
 
-import Volunteer from './routes/Volunteers';
+import Volunteer from './routes/Volunteer';
 import VolunteerDetail from './components/volunteer/VolunteerDetail';
+import Study from './routes/Study';
+import StudyDetail from './components/study/StudyDetail';
+import StudyRegister from './components/study/StudyRegister';
 
 
 function App() {
@@ -48,6 +51,10 @@ function App() {
 
             <Route path="/volunteers" element={<Volunteer/>}></Route>
             <Route path="/volunteers/no=:idex" element={<VolunteerDetail/>}></Route>
+
+            <Route path="/studies" element={<Study/>}></Route>
+            <Route path="/studies/:idex" element={<StudyDetail/>}></Route>
+            <Route path="/studies/register" element={<StudyRegister/>}></Route>
 
 
             
