@@ -1,3 +1,4 @@
+import Navbar from "../home/Navbar";
 import s from "./VolunteerDetail.module.css";
 import Table from "react-bootstrap/Table";
 import { useEffect, useState } from "react";
