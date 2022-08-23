@@ -21,6 +21,10 @@ import MyScrap from './components/mypage/MyScrap';
 import MyPoint from './components/mypage/MyPoint';
 import MyPage from './routes/MyPage';
 
+import Volunteer from './routes/Volunteers';
+import VolunteerDetail from './components/volunteer/VolunteerDetail';
+
+
 function App() {
 
   return (
@@ -48,15 +52,24 @@ function App() {
             <Route path="/testqna" element={<TestQna />}></Route>
             <Route path="/result" element={<TestResult />}></Route>
 
+
             <Route path="/MyPage" element={<MyPage/>}></Route>
             <Route path="/MyMentoApply" element={<MyMentoApply/>}></Route>
             <Route path="/MyMento" element={<MyMento/>}></Route>
             <Route path="/MyStudy" element={<MyStudy/>}></Route>
             <Route path="/MyScrap" element={<MyScrap/>}></Route>
             <Route path="/MyPoint" element={<MyPoint/>}></Route>
+
+            <Route path="/volunteers" element={<Volunteer/>}></Route>
+            <Route path="/volunteers/no=:idex" element={<VolunteerDetail/>}></Route>
+
+
+
             
           </Routes>
         </Router>
+
+
     </div>
   );
 }
