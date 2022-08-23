@@ -1,6 +1,5 @@
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
-import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { nicknameState } from "../../recoil/User";
 
